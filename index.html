@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -17,90 +6,248 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="القرآن الكريم">
 <title>القرآن الكريم</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#C9A84C;--dark:#0D1117;--card:#161B22;--card2:#1C2128;--text:#E6D5B8;--muted:#8B7355;--border:#30261A}
-body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--dark);color:var(--text);min-height:100vh;background-image:radial-gradient(ellipse at top,#1a1200 0%,var(--dark) 70%)}
-nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-size:1.3rem;font-weight:800;color:var(--gold)}
-.search-box{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:8px 14px;width:200px}
-.search-box input{background:none;border:none;color:var(--text);font-size:.9rem;outline:none;width:100%;font-family:inherit}
-.search-box input::placeholder{color:var(--muted)}
-section{display:none;padding:24px 20px;max-width:900px;margin:0 auto}
-section.active{display:block}
-.hero{text-align:center;padding:30px 20px 20px}
-.hero h1{font-size:1.8rem;color:var(--gold);margin-bottom:6px;font-weight:800}
-.hero p{color:var(--muted);font-size:.9rem}
-.filter-tabs{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap;justify-content:center}
-.tab{padding:6px 18px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:.85rem;transition:all .2s;font-family:inherit}
-.tab.active,.tab:hover{background:var(--gold);color:#0D1117;border-color:var(--gold);font-weight:700}
-.surahs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
-.surah-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;cursor:pointer;transition:all .2s;text-align:center;position:relative}
-.surah-card:hover{border-color:var(--gold);background:var(--card2);transform:translateY(-1px)}
-.surah-num{position:absolute;top:8px;left:8px;width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--gold),#8B6914);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:#0D1117}
-.surah-arabic{font-size:1.15rem;color:var(--gold);font-weight:700;margin:18px 0 6px}
-.surah-type{font-size:.72rem;color:var(--muted);margin-bottom:2px}
-.surah-ayahs{font-size:.72rem;color:var(--muted)}
-.surah-header{background:linear-gradient(135deg,#1a1200,var(--card));border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;margin-bottom:20px}
-.back-btn{display:flex;align-items:center;gap:8px;color:var(--gold);cursor:pointer;font-size:.9rem;margin-bottom:16px;width:fit-content}
-.back-btn:hover{opacity:.8}
-.surah-title{font-size:1.8rem;color:var(--gold);font-weight:800;margin-bottom:4px}
-.surah-subtitle{color:var(--muted);font-size:.85rem}
-.bismillah{font-size:1.3rem;color:var(--gold);margin-top:14px}
-.ayah{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:10px;transition:all .2s}
-.ayah:hover{border-color:var(--gold)}
-.ayah-text{font-size:1.45rem;line-height:2.2;color:var(--text);text-align:right;direction:rtl}
-.ayah-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#8B6914);color:#0D1117;font-size:.78rem;font-weight:800;margin-right:6px}
-.ayah-translation{font-size:.83rem;color:var(--muted);margin-top:10px;line-height:1.7;border-top:1px solid var(--border);padding-top:10px;direction:ltr;text-align:left}
-.loading{text-align:center;padding:60px;color:var(--muted)}
-.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+body{font-family:'Amiri',serif;background:#0d1b2a;color:#e8d5a3;min-height:100vh;overflow-x:hidden}
+
+/* HOME */
+.home-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;background:radial-gradient(ellipse at center,#1a2a4a 0%,#0d1b2a 70%);position:relative;overflow:hidden}
+.corner{position:absolute;width:160px;height:160px;opacity:.6}
+.corner-tl{top:0;right:0}
+.corner-tr{top:0;left:0;transform:scaleX(-1)}
+.corner-bl{bottom:0;right:0;transform:scaleY(-1)}
+.corner-br{bottom:0;left:0;transform:scale(-1)}
+.frame{border:2px solid #c9a84c;border-radius:40px 40px 50% 50%/40px 40px 30px 30px;padding:50px 30px;width:100%;max-width:380px;display:flex;flex-direction:column;align-items:center;gap:20px;background:rgba(13,27,42,0.5);box-shadow:0 0 40px rgba(201,168,76,0.15),inset 0 0 40px rgba(201,168,76,0.05)}
+.frame::before{content:'';position:absolute;top:80px;right:50%;transform:translateX(50%);width:2px;height:60px;background:linear-gradient(to bottom,transparent,#c9a84c,transparent)}
+.home-title{font-size:1.2rem;color:#c9a84c;margin-bottom:10px;letter-spacing:2px}
+.menu-btn{width:100%;max-width:280px;background:linear-gradient(135deg,#8B6914,#c9a84c,#8B6914);border:none;border-radius:8px;padding:14px 20px;color:#0d1b2a;font-family:'Amiri',serif;font-size:1.1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:all .2s;box-shadow:0 4px 15px rgba(201,168,76,0.3);position:relative}
+.menu-btn::before,.menu-btn::after{content:'◈';color:#0d1b2a;opacity:.5;font-size:.8rem}
+.menu-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,0.4)}
+.menu-btn:active{transform:translateY(0)}
+.btn-icon{font-size:1.3rem}
+
+/* PAGES */
+.page{display:none;min-height:100vh;background:#0d1b2a}
+.page.active{display:block}
+
+/* TOP BAR */
+.topbar{background:linear-gradient(135deg,#1a2a3a,#0d1b2a);border-bottom:1px solid #c9a84c33;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.back-btn{background:none;border:1px solid #c9a84c55;color:#c9a84c;padding:6px 16px;border-radius:8px;cursor:pointer;font-family:'Amiri',serif;font-size:.95rem}
+.page-title{font-size:1.2rem;color:#c9a84c;font-weight:700}
+
+/* SEARCH */
+.search-wrap{padding:16px 20px;background:#0d1b2a;border-bottom:1px solid #c9a84c22}
+.search-input{width:100%;background:#1a2a3a;border:1px solid #c9a84c44;color:#e8d5a3;padding:10px 16px;border-radius:10px;font-size:.95rem;outline:none;font-family:'Amiri',serif}
+.search-input::placeholder{color:#8B7355}
+
+/* FILTER TABS */
+.filter-tabs{display:flex;gap:8px;padding:12px 20px;overflow-x:auto;border-bottom:1px solid #c9a84c22}
+.ftab{padding:6px 18px;border-radius:20px;border:1px solid #c9a84c44;background:transparent;color:#8B7355;cursor:pointer;font-size:.85rem;white-space:nowrap;font-family:'Amiri',serif;transition:all .2s}
+.ftab.active,.ftab:hover{background:linear-gradient(135deg,#8B6914,#c9a84c);color:#0d1b2a;border-color:#c9a84c;font-weight:700}
+
+/* SURAHS GRID */
+.surahs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
+.surah-card{background:linear-gradient(135deg,#1a2a3a,#152238);border:1px solid #c9a84c33;border-radius:12px;padding:14px;cursor:pointer;transition:all .2s;text-align:center}
+.surah-card:hover{border-color:#c9a84c;transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,168,76,0.15)}
+.surah-num{width:32px;height:32px;background:linear-gradient(135deg,#8B6914,#c9a84c);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#0d1b2a;margin:0 auto 8px}
+.surah-arabic{font-size:1.1rem;color:#c9a84c;font-weight:700;margin-bottom:4px}
+.surah-type{font-size:.72rem;color:#8B7355}
+.surah-ayahs{font-size:.72rem;color:#8B7355}
+
+/* SURAH PAGE */
+.surah-header{background:linear-gradient(135deg,#1a2a3a,#0d1b2a);border-bottom:1px solid #c9a84c33;padding:20px;text-align:center}
+.surah-header-title{font-size:1.6rem;color:#c9a84c;font-weight:700;margin-bottom:4px}
+.surah-header-sub{font-size:.85rem;color:#8B7355}
+.bismillah{font-family:'Amiri Quran',serif;font-size:1.4rem;color:#c9a84c;margin-top:14px;line-height:2}
+.ayahs-list{padding:16px}
+.ayah-item{background:linear-gradient(135deg,#1a2a3a,#152238);border:1px solid #c9a84c22;border-radius:12px;padding:20px;margin-bottom:12px;transition:all .2s}
+.ayah-item:hover{border-color:#c9a84c55}
+.ayah-text{font-family:'Amiri Quran',serif;font-size:1.6rem;line-height:2.4;color:#e8d5a3;text-align:center;direction:rtl}
+.ayah-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#8B6914,#c9a84c);color:#0d1b2a;font-size:.8rem;font-weight:800;margin:10px auto 0;display:block;text-align:center;line-height:34px}
+
+/* AZKAR PAGE */
+.azkar-cats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
+.azkar-cat{background:linear-gradient(135deg,#1a2a3a,#152238);border:1px solid #c9a84c33;border-radius:12px;padding:20px;cursor:pointer;text-align:center;transition:all .2s}
+.azkar-cat:hover{border-color:#c9a84c;transform:translateY(-2px)}
+.azkar-cat-icon{font-size:2rem;margin-bottom:10px}
+.azkar-cat-name{font-size:1rem;color:#c9a84c;font-weight:700}
+.azkar-list{padding:16px;display:none}
+.azkar-list.active{display:block}
+.zikr-card{background:linear-gradient(135deg,#1a2a3a,#152238);border:1px solid #c9a84c33;border-radius:12px;padding:20px;margin-bottom:12px;text-align:center}
+.zikr-text{font-family:'Amiri Quran',serif;font-size:1.3rem;line-height:2.2;color:#e8d5a3;margin-bottom:12px}
+.zikr-count{background:linear-gradient(135deg,#8B6914,#c9a84c);color:#0d1b2a;padding:4px 16px;border-radius:20px;font-size:.85rem;font-weight:700;display:inline-block}
+.zikr-source{font-size:.8rem;color:#8B7355;margin-top:8px}
+
+/* LOADING */
+.loading{text-align:center;padding:60px;color:#8B7355}
+.spinner{width:40px;height:40px;border:3px solid #c9a84c33;border-top-color:#c9a84c;border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.empty{text-align:center;padding:40px;color:var(--muted);grid-column:1/-1}
-@media(max-width:600px){.surahs-grid{grid-template-columns:repeat(3,1fr)}.search-box{width:150px}}
+.empty{text-align:center;padding:40px;color:#8B7355;grid-column:1/-1}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="logo">☪️ القرآن الكريم</div>
-  <div class="search-box">
-    <span>🔍</span>
-    <input id="searchInput" placeholder="ابحث عن سورة..." oninput="filterSurahs(this.value)">
-  </div>
-</nav>
+<!-- HOME -->
+<div class="home-page" id="homePage">
+  <svg class="corner corner-tl" viewBox="0 0 160 160" fill="none"><path d="M160,0 Q120,0 100,20 Q80,40 80,80 Q80,120 60,140 Q40,160 0,160 L0,0 Z" fill="#c9a84c" opacity=".15"/><path d="M155,0 Q115,5 95,25 Q75,45 75,80" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".5"/><circle cx="20" cy="20" r="8" fill="#c9a84c" opacity=".3"/><circle cx="140" cy="140" r="5" fill="#c9a84c" opacity=".3"/></svg>
+  <svg class="corner corner-tr" viewBox="0 0 160 160" fill="none"><path d="M160,0 Q120,0 100,20 Q80,40 80,80 Q80,120 60,140 Q40,160 0,160 L0,0 Z" fill="#c9a84c" opacity=".15"/><path d="M155,0 Q115,5 95,25 Q75,45 75,80" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".5"/><circle cx="20" cy="20" r="8" fill="#c9a84c" opacity=".3"/></svg>
+  <svg class="corner corner-bl" viewBox="0 0 160 160" fill="none"><path d="M160,0 Q120,0 100,20 Q80,40 80,80 Q80,120 60,140 Q40,160 0,160 L0,0 Z" fill="#c9a84c" opacity=".15"/><path d="M155,0 Q115,5 95,25 Q75,45 75,80" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".5"/><circle cx="20" cy="20" r="8" fill="#c9a84c" opacity=".3"/></svg>
+  <svg class="corner corner-br" viewBox="0 0 160 160" fill="none"><path d="M160,0 Q120,0 100,20 Q80,40 80,80 Q80,120 60,140 Q40,160 0,160 L0,0 Z" fill="#c9a84c" opacity=".15"/><path d="M155,0 Q115,5 95,25 Q75,45 75,80" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".5"/><circle cx="20" cy="20" r="8" fill="#c9a84c" opacity=".3"/></svg>
 
-<section id="home" class="active">
-  <div class="hero">
-    <h1>القرآن الكريم</h1>
-    <p>اختر سورة للقراءة</p>
+  <div class="frame">
+    <div class="home-title">﷽</div>
+    <button class="menu-btn" onclick="showPage('quranPage');loadSurahs()">
+      <span class="btn-icon">📖</span> القرآن الكريم <span></span>
+    </button>
+    <button class="menu-btn" onclick="showPage('azkarPage')">
+      <span class="btn-icon">🤲</span> الأذكار والأدعية <span></span>
+    </button>
+  </div>
+</div>
+
+<!-- QURAN PAGE -->
+<div class="page" id="quranPage">
+  <div class="topbar">
+    <button class="back-btn" onclick="showPage('homePage')">← رجوع</button>
+    <div class="page-title">📖 القرآن الكريم</div>
+    <div></div>
+  </div>
+  <div class="search-wrap">
+    <input class="search-input" id="searchInput" placeholder="🔍 ابحث عن سورة..." oninput="filterSurahs(this.value)">
   </div>
   <div class="filter-tabs">
-    <button class="tab active" onclick="filterType('all',this)">الكل</button>
-    <button class="tab" onclick="filterType('meccan',this)">مكية</button>
-    <button class="tab" onclick="filterType('medinan',this)">مدنية</button>
+    <button class="ftab active" onclick="filterType('all',this)">الكل</button>
+    <button class="ftab" onclick="filterType('meccan',this)">مكية</button>
+    <button class="ftab" onclick="filterType('medinan',this)">مدنية</button>
   </div>
   <div id="surahsGrid" class="surahs-grid">
     <div class="loading" style="grid-column:1/-1"><div class="spinner"></div>جاري التحميل...</div>
   </div>
-</section>
+</div>
 
-<section id="surah">
-  <div class="back-btn" onclick="goHome()">← رجوع للسور</div>
+<!-- SURAH PAGE -->
+<div class="page" id="surahPage">
+  <div class="topbar">
+    <button class="back-btn" onclick="showPage('quranPage')">← رجوع</button>
+    <div class="page-title" id="surahPageTitle">السورة</div>
+    <div></div>
+  </div>
   <div id="surahContent"></div>
-</section>
+</div>
+
+<!-- AZKAR PAGE -->
+<div class="page" id="azkarPage">
+  <div class="topbar">
+    <button class="back-btn" onclick="showPage('homePage')">← رجوع</button>
+    <div class="page-title">🤲 الأذكار والأدعية</div>
+    <div></div>
+  </div>
+  <div id="azkarContent">
+    <div class="azkar-cats">
+      <div class="azkar-cat" onclick="showAzkar('morning')"><div class="azkar-cat-icon">🌅</div><div class="azkar-cat-name">أذكار الصباح</div></div>
+      <div class="azkar-cat" onclick="showAzkar('evening')"><div class="azkar-cat-icon">🌙</div><div class="azkar-cat-name">أذكار المساء</div></div>
+      <div class="azkar-cat" onclick="showAzkar('sleep')"><div class="azkar-cat-icon">😴</div><div class="azkar-cat-name">أذكار النوم</div></div>
+      <div class="azkar-cat" onclick="showAzkar('prayer')"><div class="azkar-cat-icon">🕌</div><div class="azkar-cat-name">أذكار الصلاة</div></div>
+      <div class="azkar-cat" onclick="showAzkar('quran')"><div class="azkar-cat-icon">📖</div><div class="azkar-cat-name">أدعية قرآنية</div></div>
+      <div class="azkar-cat" onclick="showAzkar('daily')"><div class="azkar-cat-icon">🤲</div><div class="azkar-cat-name">أذكار يومية</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- AZKAR DETAIL PAGE -->
+<div class="page" id="azkarDetailPage">
+  <div class="topbar">
+    <button class="back-btn" onclick="showPage('azkarPage')">← رجوع</button>
+    <div class="page-title" id="azkarDetailTitle">الأذكار</div>
+    <div></div>
+  </div>
+  <div id="azkarDetailContent" class="azkar-list active"></div>
+</div>
 
 <script>
-let allSurahs=[];
-let currentFilter='all';
+const azkarData = {
+  morning: {
+    title: '🌅 أذكار الصباح',
+    items: [
+      {text:'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',count:'١ مرة',source:'رواه مسلم'},
+      {text:'اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ',count:'١ مرة',source:'رواه أبو داود'},
+      {text:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',count:'١٠٠ مرة',source:'رواه مسلم'},
+      {text:'لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',count:'١٠ مرات',source:'رواه البخاري'},
+      {text:'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ',count:'١ مرة',source:'رواه البخاري'},
+    ]
+  },
+  evening: {
+    title: '🌙 أذكار المساء',
+    items: [
+      {text:'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ',count:'١ مرة',source:'رواه مسلم'},
+      {text:'اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ',count:'١ مرة',source:'رواه أبو داود'},
+      {text:'اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ وَمَلَائِكَتَكَ وَجَمِيعَ خَلْقِكَ أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ',count:'٤ مرات',source:'رواه أبو داود'},
+    ]
+  },
+  sleep: {
+    title: '😴 أذكار النوم',
+    items: [
+      {text:'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا',count:'١ مرة',source:'رواه البخاري'},
+      {text:'اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ',count:'٣ مرات',source:'رواه أبو داود'},
+      {text:'سُبْحَانَ اللَّهِ — الْحَمْدُ لِلَّهِ — اللَّهُ أَكْبَرُ',count:'٣٣ مرة لكل',source:'متفق عليه'},
+      {text:'آيَةُ الْكُرْسِيِّ ﴿اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ...﴾',count:'١ مرة',source:'رواه البخاري'},
+    ]
+  },
+  prayer: {
+    title: '🕌 أذكار الصلاة',
+    items: [
+      {text:'سُبْحَانَ رَبِّيَ الْعَظِيمِ',count:'٣ مرات في الركوع',source:'رواه مسلم'},
+      {text:'سُبْحَانَ رَبِّيَ الْأَعْلَى',count:'٣ مرات في السجود',source:'رواه مسلم'},
+      {text:'رَبَّنَا وَلَكَ الْحَمْدُ',count:'عند الرفع من الركوع',source:'متفق عليه'},
+      {text:'اللَّهُمَّ اغْفِرْ لِي',count:'بين السجدتين',source:'رواه أبو داود'},
+    ]
+  },
+  quran: {
+    title: '📖 أدعية قرآنية',
+    items: [
+      {text:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',count:'',source:'البقرة: ٢٠١'},
+      {text:'رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي',count:'',source:'طه: ٢٥-٢٦'},
+      {text:'رَبِّ زِدْنِي عِلْمًا',count:'',source:'طه: ١١٤'},
+      {text:'رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً',count:'',source:'آل عمران: ٨'},
+      {text:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',count:'',source:'آل عمران: ١٧٣'},
+    ]
+  },
+  daily: {
+    title: '🤲 أذكار يومية',
+    items: [
+      {text:'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',count:'عند كل عمل',source:''},
+      {text:'الْحَمْدُ لِلَّهِ',count:'دائماً',source:'رواه مسلم'},
+      {text:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ',count:'',source:'متفق عليه'},
+      {text:'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',count:'',source:'متفق عليه'},
+      {text:'اسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',count:'١٠٠ مرة يومياً',source:'رواه البخاري'},
+    ]
+  }
+};
+
+let allSurahs=[], currentFilter='all';
+
+function showPage(id){
+  document.querySelectorAll('.home-page,.page').forEach(p=>{
+    p.classList.remove('active');
+    if(p.classList.contains('home-page')) p.style.display='none';
+  });
+  if(id==='homePage'){
+    document.getElementById('homePage').style.display='flex';
+  } else {
+    document.getElementById(id).classList.add('active');
+  }
+  window.scrollTo(0,0);
+}
 
 async function loadSurahs(){
+  if(allSurahs.length){renderSurahs(allSurahs);return;}
   try{
     const res=await fetch('https://api.alquran.cloud/v1/surah');
-    const data=await res.json();
-    allSurahs=data.data;
+    allSurahs=(await res.json()).data;
     renderSurahs(allSurahs);
   }catch(e){
-    document.getElementById('surahsGrid').innerHTML='<div class="empty">❌ تعذر التحميل، تحقق من الإنترنت</div>';
+    document.getElementById('surahsGrid').innerHTML='<div class="empty">❌ تعذر التحميل</div>';
   }
 }
 
@@ -117,66 +264,63 @@ function renderSurahs(surahs){
   `).join('');
 }
 
-function filterSurahs(query){
-  let filtered=allSurahs;
-  if(currentFilter!=='all') filtered=filtered.filter(s=>currentFilter==='meccan'?s.revelationType==='Meccan':s.revelationType==='Medinan');
-  if(query) filtered=filtered.filter(s=>s.name.includes(query)||s.number.toString()===query);
-  renderSurahs(filtered);
+function filterSurahs(q){
+  let f=allSurahs;
+  if(currentFilter!=='all') f=f.filter(s=>currentFilter==='meccan'?s.revelationType==='Meccan':s.revelationType==='Medinan');
+  if(q) f=f.filter(s=>s.name.includes(q)||s.number.toString()===q);
+  renderSurahs(f);
 }
 
 function filterType(type,btn){
   currentFilter=type;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
   filterSurahs(document.getElementById('searchInput').value);
 }
 
 async function loadSurah(num){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.getElementById('surah').classList.add('active');
+  showPage('surahPage');
   document.getElementById('surahContent').innerHTML='<div class="loading"><div class="spinner"></div>جاري تحميل السورة...</div>';
-  window.scrollTo(0,0);
   try{
-    const [arRes,enRes]=await Promise.all([
-      fetch(`https://api.alquran.cloud/v1/surah/${num}`),
-      fetch(`https://api.alquran.cloud/v1/surah/${num}/en.asad`)
-    ]);
-    const surah=(await arRes.json()).data;
-    const translations=(await enRes.json()).data.ayahs;
-    const isTawbah=num===9;
+    const res=await fetch(`https://api.alquran.cloud/v1/surah/${num}`);
+    const surah=(await res.json()).data;
+    document.getElementById('surahPageTitle').textContent=surah.name;
     let html=`
       <div class="surah-header">
-        <div class="surah-title">${surah.name}</div>
-        <div class="surah-subtitle">${surah.revelationType==='Meccan'?'مكية':'مدنية'} • ${surah.numberOfAyahs} آية</div>
-        ${!isTawbah?'<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>':''}
+        <div class="surah-header-title">${surah.name}</div>
+        <div class="surah-header-sub">${surah.revelationType==='Meccan'?'مكية':'مدنية'} • ${surah.numberOfAyahs} آية</div>
+        ${num!==9?'<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>':''}
       </div>
+      <div class="ayahs-list">
     `;
-    html+=surah.ayahs.map((ayah,i)=>`
-      <div class="ayah">
-        <div class="ayah-text">
-          <span class="ayah-num">${ayah.numberInSurah}</span>
-          ${ayah.text}
-        </div>
-        ${translations[i]?`<div class="ayah-translation">${translations[i].text}</div>`:''}
+    html+=surah.ayahs.map(a=>`
+      <div class="ayah-item">
+        <div class="ayah-text">${a.text}</div>
+        <div class="ayah-num">${a.numberInSurah}</div>
       </div>
     `).join('');
+    html+='</div>';
     document.getElementById('surahContent').innerHTML=html;
   }catch(e){
     document.getElementById('surahContent').innerHTML='<div class="empty">❌ تعذر تحميل السورة</div>';
   }
 }
 
-function goHome(){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.getElementById('home').classList.add('active');
-  window.scrollTo(0,0);
+function showAzkar(cat){
+  const data=azkarData[cat];
+  document.getElementById('azkarDetailTitle').textContent=data.title;
+  document.getElementById('azkarDetailContent').innerHTML=data.items.map(z=>`
+    <div class="zikr-card">
+      <div class="zikr-text">${z.text}</div>
+      ${z.count?`<span class="zikr-count">${z.count}</span>`:''}
+      ${z.source?`<div class="zikr-source">${z.source}</div>`:''}
+    </div>
+  `).join('');
+  showPage('azkarDetailPage');
 }
 
-loadSurahs();
+// Init
+document.getElementById('homePage').style.display='flex';
 </script>
 </body>
-</html>
-    
-  </body>
-  
 </html>
