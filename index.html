@@ -12,13 +12,7 @@
 :root{--bg:#0d1b2a;--bg2:#1a2a3a;--bg3:#152238;--gold:#c9a84c;--gold2:#8B6914;--text:#e8d5a3;--muted:#8B7355;--border:#c9a84c33}
 body{font-family:'Amiri',serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
 body.light{--bg:#f5f0e8;--bg2:#ebe4d6;--bg3:#e0d8c8;--text:#2a1f0e;--muted:#8B7355}
-#splash{position:fixed;inset:0;background:radial-gradient(ellipse at center,#1a2a4a,#0d1b2a);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s}
-#splash.hide{opacity:0;pointer-events:none}
-.splash-ring{width:90px;height:90px;border:3px solid #c9a84c33;border-top-color:#c9a84c;border-radius:50%;animation:spin .8s linear infinite}
-.splash-title{font-family:'Amiri Quran',serif;font-size:1.8rem;color:#c9a84c;margin-top:16px}
-.splash-sub{color:#8B7355;font-size:.85rem;margin-top:8px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.home-page{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;background:radial-gradient(ellipse at center,#1a2a4a 0%,var(--bg) 70%);position:relative;overflow:hidden}
+.home-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;background:radial-gradient(ellipse at center,#1a2a4a 0%,var(--bg) 70%);position:relative;overflow:hidden}
 body.light .home-page{background:radial-gradient(ellipse at center,#e8dfc8 0%,var(--bg) 70%)}
 .corner{position:absolute;width:130px;height:130px;opacity:.5}
 .corner-tl{top:0;right:0}.corner-tr{top:0;left:0;transform:scaleX(-1)}
@@ -72,36 +66,34 @@ body.light .frame{background:rgba(245,240,232,0.85)}
 .audio-progress{width:100%;height:4px;background:var(--bg3);border-radius:4px;margin-top:10px;overflow:hidden;cursor:pointer}
 .audio-bar{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:4px;width:0%;transition:width .3s}
 .names-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
-.name-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;transition:all .2s}
-.name-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.name-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
 .name-num{font-size:.68rem;color:var(--muted);margin-bottom:4px}
 .name-ar{font-family:'Amiri Quran',serif;font-size:1.2rem;color:var(--gold);margin-bottom:4px}
 .name-meaning{font-size:.75rem;color:var(--text);line-height:1.5}
 .stories-list{padding:10px}
 .story-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:10px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px}
-.story-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.story-card:hover{border-color:var(--gold)}
 .story-icon{font-size:2rem;width:50px;text-align:center}
 .story-info{flex:1}
 .story-name{font-size:1.05rem;color:var(--gold);font-weight:700;margin-bottom:4px}
-.story-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
+.story-desc{font-size:.78rem;color:var(--muted)}
 .story-content{padding:14px}
 .story-text{font-size:1rem;line-height:2;color:var(--text);text-align:justify}
 .story-text p{margin-bottom:14px}
 .story-text .verse{font-family:'Amiri Quran',serif;font-size:1.1rem;color:var(--gold);display:block;text-align:center;margin:10px 0;padding:10px;background:rgba(201,168,76,0.08);border-radius:8px;border-right:3px solid var(--gold)}
 .duas-cats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
 .dua-cat{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;text-align:center;transition:all .2s}
-.dua-cat:hover{border-color:var(--gold);transform:translateY(-2px)}
+.dua-cat:hover{border-color:var(--gold)}
 .dua-cat-icon{font-size:1.6rem;margin-bottom:6px}
 .dua-cat-name{font-size:.9rem;color:var(--gold);font-weight:700}
 .duas-list{padding:10px}
 .dua-card{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:16px;margin-bottom:10px}
 .dua-title{font-size:.85rem;color:var(--gold);margin-bottom:8px;font-weight:700}
 .dua-arabic{font-family:'Amiri Quran',serif;font-size:1.2rem;line-height:2.2;color:var(--text);text-align:center;margin-bottom:8px}
-.dua-meaning{font-size:.8rem;color:var(--muted);line-height:1.6;text-align:center;font-style:italic}
 .dua-source{font-size:.72rem;color:var(--gold);margin-top:6px;text-align:center}
 .tasbih-select{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
 .tasbih-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px;cursor:pointer;text-align:center;transition:all .2s}
-.tasbih-item:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tasbih-item:hover{border-color:var(--gold)}
 .tasbih-item-text{font-family:'Amiri Quran',serif;font-size:.93rem;color:var(--gold);margin-bottom:3px}
 .tasbih-item-count{font-size:.7rem;color:var(--muted)}
 .tasbih-page{padding:20px 13px;text-align:center}
@@ -123,12 +115,12 @@ body.light .frame{background:rgba(245,240,232,0.85)}
 .khatma-stat-num{font-size:1.25rem;font-weight:900;color:var(--gold);display:block}
 .khatma-stat-label{font-size:.66rem;color:var(--muted)}
 .khatma-surahs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-.khatma-surah{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:6px 3px;text-align:center;cursor:pointer;transition:all .2s;font-size:.72rem;color:var(--text)}
-.khatma-surah.done{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#0d1b2a;border-color:var(--gold);font-weight:700}
+.khatma-surah{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:6px 3px;text-align:center;cursor:pointer;font-size:.72rem;color:var(--text)}
+.khatma-surah.done{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#0d1b2a;font-weight:700}
 .done-date{font-size:.58rem;display:block;opacity:.75;margin-top:1px}
 .azkar-cats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
 .azkar-cat{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;text-align:center;transition:all .2s}
-.azkar-cat:hover{border-color:var(--gold);transform:translateY(-2px)}
+.azkar-cat:hover{border-color:var(--gold)}
 .azkar-cat-icon{font-size:1.6rem;margin-bottom:6px}
 .azkar-cat-name{font-size:.9rem;color:var(--gold);font-weight:700}
 .azkar-detail{padding:10px}
@@ -137,25 +129,20 @@ body.light .frame{background:rgba(245,240,232,0.85)}
 .zikr-count{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#0d1b2a;padding:3px 12px;border-radius:16px;font-size:.78rem;font-weight:700;display:inline-block}
 .zikr-source{font-size:.72rem;color:var(--muted);margin-top:5px}
 .ayah-results{padding:10px}
-.ayah-result{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:12px;margin-bottom:8px;cursor:pointer;transition:all .2s}
-.ayah-result:hover{border-color:var(--gold)}
+.ayah-result{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:12px;margin-bottom:8px;cursor:pointer}
 .ayah-result-text{font-family:'Amiri Quran',serif;font-size:1.05rem;line-height:2;direction:rtl;color:var(--text);margin-bottom:5px}
 .ayah-result-ref{font-size:.72rem;color:var(--gold)}
 .highlight{background:rgba(201,168,76,0.25);border-radius:2px;padding:0 2px}
 .loading{text-align:center;padding:46px;color:var(--muted)}
 .spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
 .empty{text-align:center;padding:34px;color:var(--muted);grid-column:1/-1}
 .btn-outline{background:transparent;color:var(--gold);border:1px solid var(--border);padding:8px 20px;border-radius:8px;font-family:'Amiri',serif;font-size:.92rem;cursor:pointer}
 </style>
 </head>
 <body>
 
-<div id="splash">
-  <div class="splash-ring"></div>
-  <div class="splash-title">القرآن الكريم</div>
-  <div class="splash-sub">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-</div>
-
+<!-- HOME - يفتح مباشرة -->
 <div class="home-page" id="homePage">
   <svg class="corner corner-tl" viewBox="0 0 160 160" fill="none"><path d="M160,0 Q120,0 100,20 Q80,40 80,80 Q80,120 60,140 Q40,160 0,160 L0,0 Z" fill="#c9a84c" opacity=".15"/><path d="M155,0 Q115,5 95,25 Q75,45 75,80" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".5"/></svg>
   <svg class="corner corner-tr" viewBox="0 0 160 160" fill="none"><path d="M160,0 Q120,0 100,20 Q80,40 80,80 Q80,120 60,140 Q40,160 0,160 L0,0 Z" fill="#c9a84c" opacity=".15"/><path d="M155,0 Q115,5 95,25 Q75,45 75,80" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".5"/></svg>
@@ -208,7 +195,7 @@ body.light .frame{background:rgba(245,240,232,0.85)}
     <span style="color:var(--muted);font-size:.76rem;padding:0 6px">حجم الخط</span>
     <button class="font-btn" onclick="changeFontSize(2)">أ+</button>
   </div>
-  <div id="audioPlayer" class="audio-player">
+  <div class="audio-player">
     <div class="audio-title">🎵 تلاوة الشيخ ياسر الدوسري</div>
     <div class="audio-controls">
       <button class="play-btn" id="playBtn" onclick="toggleAudio()">▶</button>
@@ -352,7 +339,7 @@ body.light .frame{background:rgba(245,240,232,0.85)}
   </div>
   <div class="khatma-page">
     <div class="khatma-header">
-      <div style="font-size:.95rem;color:var(--gold);margin-bottom:6px">تقدمك في ختمة القرآن الكريم</div>
+      <div style="font-size:.95rem;color:var(--gold);margin-bottom:6px">تقدمك في ختمة القرآن</div>
       <div class="khatma-progress"><div class="khatma-bar" id="khatmaBar" style="width:0%"></div></div>
       <div style="color:var(--muted);font-size:.8rem"><span id="khatmaDone">0</span> / 114 سورة</div>
     </div>
@@ -483,108 +470,50 @@ const allNames=[
 ];
 
 const storiesData=[
-  {icon:'🌟',name:'سيدنا آدم عليه السلام',desc:'أبو البشر وأول الأنبياء',story:`
-    <p>خلق الله تعالى آدم عليه السلام من طين الأرض، ونفخ فيه من روحه، فإذا هو إنسان سوي قائم يسمع ويرى ويعقل، وكان أول إنسان على وجه الأرض. أمر الله الملائكة بالسجود لآدم تكريماً له وإظهاراً لمكانته، فسجدوا جميعاً إلا إبليس أبى واستكبر وكان من الكافرين.</p>
-    <span class="verse">وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً</span>
-    <p>علّم الله آدم الأسماء كلها ثم عرضهم على الملائكة فقال أنبئوني بأسماء هؤلاء، فاعترفت الملائكة بعجزها. أسكن الله آدم وزوجته حواء الجنة وأمرهما ألا يقربا شجرةً بعينها. لكن الشيطان وسوس إليهما وأغراهما بالأكل منها، فأكلا فبدت لهما سوآتهما وطفقا يخصفان عليهما من ورق الجنة.</p>
-    <span class="verse">فَأَزَلَّهُمَا الشَّيْطَانُ عَنْهَا فَأَخْرَجَهُمَا مِمَّا كَانَا فِيهِ</span>
-    <p>أُهبط آدم وحواء وإبليس إلى الأرض. تاب آدم وحواء وندما على ما فعلا، فتاب الله عليهما وغفر لهما. جعل الله الأرض مستقراً لذرية آدم إلى يوم القيامة، وأنزل معهم الهدى ووعد من اتبعه ألا يضل ولا يشقى.</p>
-    <span class="verse">فَتَلَقَّى آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ ۚ إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ</span>
-  `},
-  {icon:'🕊️',name:'سيدنا نوح عليه السلام',desc:'نبي الله الذي بنى السفينة',story:`
-    <p>بُعث نوح عليه السلام إلى قومه الذين غرقوا في عبادة الأصنام وأشركوا بالله. دعاهم إلى التوحيد ألف سنة إلا خمسين عاماً، ليلاً ونهاراً، سراً وجهاراً، لكن أكثرهم أبوا وكذّبوه واستهزأوا به.</p>
-    <span class="verse">وَلَقَدْ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ فَلَبِثَ فِيهِمْ أَلْفَ سَنَةٍ إِلَّا خَمْسِينَ عَامًا</span>
-    <p>أوحى الله إلى نوح أنه لن يؤمن من قومه إلا من قد آمن، وأمره ببناء السفينة. شرع نوح في بنائها وكلما مر عليه الملأ من قومه سخروا منه. فلما اكتملت السفينة أمره الله أن يحمل فيها من كل زوجين اثنين وأهله إلا من سبق عليه القول ومن آمن.</p>
-    <span class="verse">وَاصْنَعِ الْفُلْكَ بِأَعْيُنِنَا وَوَحْيِنَا</span>
-    <p>جاء الطوفان العظيم وفار التنور وانهمر المطر من السماء وتفجّرت عيون الأرض، فأغرق الله الكافرين جميعاً حتى ابن نوح الذي أبى الركوب. استقرت السفينة على جبل الجودي، وانطلقت حياة جديدة على الأرض من نسل من كانوا في السفينة.</p>
-    <span class="verse">وَقِيلَ يَا أَرْضُ ابْلَعِي مَاءَكِ وَيَا سَمَاءُ أَقْلِعِي وَغِيضَ الْمَاءُ</span>
-  `},
-  {icon:'🔥',name:'سيدنا إبراهيم عليه السلام',desc:'خليل الرحمن وأبو الأنبياء',story:`
-    <p>إبراهيم عليه السلام خليل الله وأبو الأنبياء، نشأ في بيت يعبد الأصنام وأبوه آزر نجّار يصنعها. منذ صغره تساءل عن الحقيقة وأدرك بفطرته أن هذه الأصنام لا تستحق العبادة. نظر في الكواكب والشمس والقمر ثم أعرض عنها كلها وتوجه إلى الله وحده.</p>
-    <span class="verse">وَكَذَٰلِكَ نُرِي إِبْرَاهِيمَ مَلَكُوتَ السَّمَاوَاتِ وَالْأَرْضِ وَلِيَكُونَ مِنَ الْمُوقِنِينَ</span>
-    <p>حطّم إبراهيم الأصنام وكسّرها كلها إلا الكبير منها، فغضب قومه وألقوه في النار العظيمة. أمر الله النار أن تكون برداً وسلاماً على إبراهيم فلم تضره. هاجر إلى الأرض المقدسة ثم إلى مكة المكرمة، وبنى الكعبة المشرفة مع ابنه إسماعيل.</p>
-    <span class="verse">قُلْنَا يَا نَارُ كُونِي بَرْدًا وَسَلَامًا عَلَىٰ إِبْرَاهِيمَ</span>
-    <p>ابتلاه الله بذبح ابنه إسماعيل في المنام، فامتثل وأضجعه للذبح، ففداه الله بذبح عظيم. وبشّره بإسحاق ومن ذريته يعقوب. دعا إبراهيم لمكة بالبركة ولأهلها بالرزق، ولا تزال دعوته مستجابة إلى يومنا هذا.</p>
-    <span class="verse">وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ رَبَّنَا تَقَبَّلْ مِنَّا</span>
-  `},
-  {icon:'⚡',name:'سيدنا موسى عليه السلام',desc:'كليم الله وصاحب المعجزات',story:`
-    <p>وُلد موسى عليه السلام في زمن فرعون الطاغية الذي كان يذبح أبناء بني إسرائيل خشية أن يأتي منهم من يُزيل ملكه. أوحى الله إلى أمه أن تضعه في تابوت وتلقيه في النيل، فالتقطه آل فرعون ونشأ في قصره.</p>
-    <span class="verse">وَأَوْحَيْنَا إِلَىٰ أُمِّ مُوسَىٰ أَنْ أَرْضِعِيهِ فَإِذَا خِفْتِ عَلَيْهِ فَأَلْقِيهِ فِي الْيَمِّ</span>
-    <p>لما بلغ أشده وكلّمه الله من الشجرة المباركة في واد طوى، أرسله إلى فرعون وآتاه معجزتين: العصا التي تتحول إلى ثعبان، واليد البيضاء. أبى فرعون وكذّب فأنزل الله عليه تسع آيات: الطوفان والجراد والقمل والضفادع والدم والطمس وغيرها.</p>
-    <span class="verse">فَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنِ اضْرِب بِّعَصَاكَ الْبَحْرَ فَانفَلَقَ فَكَانَ كُلُّ فِرْقٍ كَالطَّوْدِ الْعَظِيمِ</span>
-    <p>أغرق الله فرعون وجنوده في البحر وأنجى موسى وبني إسرائيل. ذهب موسى إلى الطور ليتلقى التوراة أربعين ليلة، فعبد قومه العجل في غيابه. تاب الله عليهم وأنزل عليهم المن والسلوى في التيه أربعين سنة.</p>
-  `},
-  {icon:'👑',name:'سيدنا يوسف عليه السلام',desc:'أجمل قصص القرآن الكريم',story:`
-    <p>يوسف عليه السلام ابن يعقوب بن إسحاق بن إبراهيم، وهو من أجمل الناس خَلقاً وخُلقاً. رأى في المنام وهو صغير أن أحد عشر كوكباً والشمس والقمر يسجدون له، فقصّ رؤياه على أبيه يعقوب فأوصاه ألا يقصّها على إخوته خشية أن يكيدوا له.</p>
-    <span class="verse">إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ</span>
-    <p>حسده إخوته العشرة لكونه أحب أبيه إليه وأكثرهم ملازمةً له، فتآمروا عليه وألقوه في الجب وأخبروا أباهم أن ذئباً أكله وجاؤوا بقميصه ملطخاً بدم كذب. حزن يعقوب حزناً شديداً حتى ابيضّت عيناه من الحزن.</p>
-    <span class="verse">وَجَاؤُوا عَلَىٰ قَمِيصِهِ بِدَمٍ كَذِبٍ ۚ قَالَ بَلْ سَوَّلَتْ لَكُمْ أَنفُسُكُمْ أَمْرًا</span>
-    <p>مرّت قافلة تجارية فأرسلوا واردهم فوجد يوسف في الجب فأخرجوه وباعوه بثمن بخس دراهم معدودة. اشتراه عزيز مصر وأكرمه وقال لامرأته أكرمي مثواه. كبر يوسف وصار شاباً جميلاً، فراودته امرأة العزيز عن نفسه فاستعصم بالله وأبى قائلاً إنه لا يخون من أحسن إليه.</p>
-    <span class="verse">وَرَاوَدَتْهُ الَّتِي هُوَ فِي بَيْتِهَا عَن نَّفْسِهِ وَغَلَّقَتِ الْأَبْوَابَ وَقَالَتْ هَيْتَ لَكَ ۚ قَالَ مَعَاذَ اللَّهِ</span>
-    <p>سُجن يوسف ظلماً بسبب كيد امرأة العزيز. في السجن عبّر رؤيا صاحبيه: أحدهما يعصر خمراً والآخر يحمل خبزاً تأكل الطير منه. أُطلق سراح أحدهما كما تنبأ يوسف. بعد سنين رأى ملك مصر رؤيا عجيبة: سبع بقرات سمان يأكلهن سبع عجاف وسبع سنبلات خضر وأخر يابسات، فتذكر الناجي يوسف فأُحضر من السجن.</p>
-    <span class="verse">وَقَالَ الْمَلِكُ إِنِّي أَرَىٰ سَبْعَ بَقَرَاتٍ سِمَانٍ يَأْكُلُهُنَّ سَبْعٌ عِجَافٌ</span>
-    <p>فسّر يوسف الرؤيا بسبع سنوات خصب تتبعها سبع سنوات جدب، ونصح الملك بالادخار. أُعجب الملك بحكمته فولاّه على خزائن مصر. جاء إخوته من كنعان يطلبون الطعام فعرفهم ولم يعرفوه. طلب منهم إحضار أخيه الصغير بنيامين في المرة القادمة.</p>
-    <p>احتجز يوسف أخاه بنيامين بحيلة ذكية، فرجع إخوته إلى أبيهم يعقوب بالخبر فحزن حزناً شديداً. في المرة الثالثة كشف يوسف عن نفسه لإخوته وقال لهم تلك الكلمة الخالدة التي تدل على كرم أخلاقه وعظيم عفوه.</p>
-    <span class="verse">قَالَ لَا تَثْرِيبَ عَلَيْكُمُ الْيَوْمَ ۖ يَغْفِرُ اللَّهُ لَكُمْ ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ</span>
-    <p>أرسل يوسف بقميصه إلى أبيه، فلما ألقاه على وجه يعقوب ارتدّ إليه بصره. جاء يعقوب وأهله جميعاً إلى مصر وتحققت رؤيا يوسف القديمة إذ سجد له أبواه وإخوته، وقال يوسف في دعائه الجميل الذي يعبر عن امتنانه لله.</p>
-    <span class="verse">رَبِّ قَدْ آتَيْتَنِي مِنَ الْمُلْكِ وَعَلَّمْتَنِي مِن تَأْوِيلِ الْأَحَادِيثِ ۚ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ أَنتَ وَلِيِّي فِي الدُّنْيَا وَالْآخِرَةِ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ</span>
-  `},
-  {icon:'🐋',name:'سيدنا يونس عليه السلام',desc:'نبي الله صاحب الحوت',story:`
-    <p>يونس عليه السلام أُرسل إلى أهل نينوى في العراق، فدعاهم إلى الله فكذّبوه وأعرضوا. ضاق يونس ذرعاً بهم وغادر قبل أن يأذن له ربه، فركب السفينة في البحر.</p>
-    <span class="verse">وَذَا النُّونِ إِذ ذَّهَبَ مُغَاضِبًا فَظَنَّ أَن لَّن نَّقْدِرَ عَلَيْهِ</span>
-    <p>عصفت الريح بالسفينة فأجروا قرعة ليُلقوا بأحدهم في البحر تخفيفاً للحمل، فوقعت القرعة على يونس ثلاث مرات، فألقوه في البحر فالتقمه الحوت بأمر الله. في بطن الحوت في الظلمات الثلاث — ظلمة الليل وظلمة البحر وظلمة بطن الحوت — نادى ربه.</p>
-    <span class="verse">فَنَادَىٰ فِي الظُّلُمَاتِ أَن لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</span>
-    <p>استجاب الله لدعائه وأمر الحوت فقذفه على الساحل وهو سقيم. أنبت الله عليه شجرة من يقطين لتظلله وتداوي جلده. ثم أُرسل إلى نينوى من جديد فآمن أهلها جميعاً وكشف الله عنهم العذاب، وكانوا مئة ألف أو يزيدون.</p>
-    <span class="verse">فَلَوْلَا كَانَتْ قَرْيَةٌ آمَنَتْ فَنَفَعَهَا إِيمَانُهَا إِلَّا قَوْمَ يُونُسَ لَمَّا آمَنُوا كَشَفْنَا عَنْهُمْ عَذَابَ الْخِزْيِ فِي الْحَيَاةِ الدُّنْيَا</span>
-  `},
-  {icon:'🕌',name:'سيدنا محمد ﷺ',desc:'خاتم الأنبياء والمرسلين',story:`
-    <p>محمد ﷺ خاتم الأنبياء والمرسلين ورحمة الله للعالمين، وُلد في مكة المكرمة عام الفيل الموافق 571 ميلادية. نشأ يتيماً فقد أباه قبل ولادته وأمه وهو في السادسة، فكفله جده عبد المطلب ثم عمه أبو طالب. عُرف بالصادق الأمين لحسن أخلاقه وصدق لهجته.</p>
-    <span class="verse">وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ</span>
-    <p>في الأربعين من عمره نزل عليه الوحي في غار حراء على جبل النور، فجاءه جبريل وقال له اقرأ. بدأ الدعوة سراً ثلاث سنوات ثم جهر بها. آذاه المشركون وعذّبوا أصحابه، فأذن لهم بالهجرة إلى الحبشة. في عام الحزن توفي عمه أبو طالب وزوجته خديجة رضي الله عنها.</p>
-    <span class="verse">لَّقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ</span>
-    <p>أُسري به من مكة إلى القدس ثم عُرج به إلى السماوات العلا في ليلة الإسراء والمعراج، وفُرضت عليه الصلوات الخمس. هاجر إلى المدينة المنورة وأسس الدولة الإسلامية وبنى المسجد النبوي. خاض غزوات بدر وأحد والأحزاب وغيرها، وفتح مكة المكرمة في رمضان في السنة الثامنة للهجرة. أدّى حجة الوداع ووصّى أمته بكتاب الله وسنته، وانتقل إلى الرفيق الأعلى وعمره ثلاثة وستون عاماً.</p>
-    <span class="verse">الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِي وَرَضِيتُ لَكُمُ الْإِسْلَامَ دِينًا</span>
-  `},
+  {icon:'🌟',name:'سيدنا آدم عليه السلام',desc:'أبو البشر وأول الأنبياء',story:`<p>خلق الله تعالى آدم عليه السلام من طين الأرض، ونفخ فيه من روحه، فإذا هو إنسان سوي قائم يسمع ويرى ويعقل. أمر الله الملائكة بالسجود لآدم تكريماً له فسجدوا جميعاً إلا إبليس أبى واستكبر.</p><span class="verse">وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً</span><p>علّم الله آدم الأسماء كلها، وأسكنه وزوجته حواء الجنة. وسوس الشيطان إليهما فأكلا من الشجرة المنهي عنها فأُهبطا إلى الأرض. تاب آدم وحواء فتاب الله عليهما.</p><span class="verse">فَتَلَقَّى آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ ۚ إِنَّهُ هُوَ التَّوَّابُ الرَّحِيمُ</span>`},
+  {icon:'🕊️',name:'سيدنا نوح عليه السلام',desc:'نبي الله الذي بنى السفينة',story:`<p>بُعث نوح عليه السلام إلى قومه الذين عبدوا الأصنام، فدعاهم ألف سنة إلا خمسين عاماً لكن قليلاً منهم آمن.</p><span class="verse">وَلَقَدْ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِ فَلَبِثَ فِيهِمْ أَلْفَ سَنَةٍ إِلَّا خَمْسِينَ عَامًا</span><p>أمر الله نوحاً ببناء السفينة، فبناها وحمل فيها من كل زوجين اثنين والمؤمنين. جاء الطوفان فأغرق الكافرين. استقرت السفينة على جبل الجودي وبدأت حياة جديدة.</p><span class="verse">وَقِيلَ يَا أَرْضُ ابْلَعِي مَاءَكِ وَيَا سَمَاءُ أَقْلِعِي وَغِيضَ الْمَاءُ</span>`},
+  {icon:'🔥',name:'سيدنا إبراهيم عليه السلام',desc:'خليل الرحمن وأبو الأنبياء',story:`<p>إبراهيم عليه السلام خليل الله، كسّر أصنام قومه فألقوه في النار العظيمة. أمر الله النار أن تكون برداً وسلاماً فلم تضره.</p><span class="verse">قُلْنَا يَا نَارُ كُونِي بَرْدًا وَسَلَامًا عَلَىٰ إِبْرَاهِيمَ</span><p>هاجر إلى مكة وبنى الكعبة مع ابنه إسماعيل. ابتلاه الله بذبح ابنه فامتثل، فداه الله بذبح عظيم.</p><span class="verse">وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ رَبَّنَا تَقَبَّلْ مِنَّا</span>`},
+  {icon:'⚡',name:'سيدنا موسى عليه السلام',desc:'كليم الله وصاحب المعجزات',story:`<p>وُلد موسى في زمن فرعون الطاغية. ألقته أمه في النيل فالتقطه آل فرعون ونشأ في قصره. كلّمه الله من الشجرة المباركة وأرسله إلى فرعون بمعجزة العصا واليد البيضاء.</p><span class="verse">وَأَلْقِ عَصَاكَ ۚ فَلَمَّا رَآهَا تَهْتَزُّ كَأَنَّهَا جَانٌّ وَلَّىٰ مُدْبِرًا</span><p>أبى فرعون فأنزل الله عليه الآيات. أغرق الله فرعون في البحر وأنجى موسى وبني إسرائيل.</p><span class="verse">فَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنِ اضْرِب بِّعَصَاكَ الْبَحْرَ فَانفَلَقَ</span>`},
+  {icon:'👑',name:'سيدنا يوسف عليه السلام',desc:'أجمل قصص القرآن الكريم',story:`<p>رأى يوسف في المنام أحد عشر كوكباً والشمس والقمر يسجدون له. حسده إخوته فألقوه في البئر وأخبروا أباهم أن ذئباً أكله.</p><span class="verse">إِذْ قَالَ يُوسُفُ لِأَبِيهِ يَا أَبَتِ إِنِّي رَأَيْتُ أَحَدَ عَشَرَ كَوْكَبًا وَالشَّمْسَ وَالْقَمَرَ رَأَيْتُهُمْ لِي سَاجِدِينَ</span><p>اشتراه عزيز مصر فأكرمه، راودته امرأته فاستعصم بالله فسُجن ظلماً. في السجن عبّر الرؤى. رأى ملك مصر رؤيا سبع بقرات سمان يأكلهن سبع عجاف فأُطلق سراح يوسف وعبّرها بسبع سنوات خصب وسبع جدب.</p><span class="verse">وَقَالَ الْمَلِكُ إِنِّي أَرَىٰ سَبْعَ بَقَرَاتٍ سِمَانٍ يَأْكُلُهُنَّ سَبْعٌ عِجَافٌ</span><p>وُلّي يوسف على خزائن مصر. جاء إخوته يطلبون الطعام فعرفهم وكشف عن نفسه وعفا عنهم بكل كرم.</p><span class="verse">قَالَ لَا تَثْرِيبَ عَلَيْكُمُ الْيَوْمَ ۖ يَغْفِرُ اللَّهُ لَكُمْ ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ</span><p>جاء يعقوب وأهله إلى مصر وتحققت رؤيا يوسف القديمة، ودعا ربه بدعاء جميل.</p><span class="verse">رَبِّ قَدْ آتَيْتَنِي مِنَ الْمُلْكِ وَعَلَّمْتَنِي مِن تَأْوِيلِ الْأَحَادِيثِ ۚ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ</span>`},
+  {icon:'🐋',name:'سيدنا يونس عليه السلام',desc:'نبي الله صاحب الحوت',story:`<p>أُرسل يونس إلى أهل نينوى فكذّبوه فغادرهم قبل إذن الله فركب السفينة. وقعت عليه القرعة فأُلقي في البحر فالتقمه الحوت.</p><span class="verse">وَذَا النُّونِ إِذ ذَّهَبَ مُغَاضِبًا فَظَنَّ أَن لَّن نَّقْدِرَ عَلَيْهِ</span><p>في الظلمات الثلاث نادى ربه فاستجاب الله وألقاه على الساحل وأنبت عليه شجرة اليقطين. عاد إلى نينوى فآمن أهلها جميعاً.</p><span class="verse">فَنَادَىٰ فِي الظُّلُمَاتِ أَن لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</span>`},
+  {icon:'🕌',name:'سيدنا محمد ﷺ',desc:'خاتم الأنبياء والمرسلين',story:`<p>وُلد محمد ﷺ في مكة عام الفيل، نشأ يتيماً وعُرف بالصادق الأمين. نزل عليه الوحي في غار حراء وعمره أربعون سنة فبدأ الدعوة.</p><span class="verse">وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ</span><p>هاجر إلى المدينة وأسس الدولة الإسلامية، وفتح مكة في رمضان. أدّى حجة الوداع ووصّى أمته بكتاب الله وسنته.</p><span class="verse">لَّقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ</span>`},
 ];
 
 const duasData={
   distress:{title:'🌊 دعاء الكرب',items:[
-    {title:'دعاء الكرب الأول',arabic:'لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ',meaning:'',source:'متفق عليه'},
-    {title:'دعاء يونس',arabic:'لَا إِلَهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ',meaning:'',source:'القرآن الكريم'},
-    {title:'دعاء الهم والحزن',arabic:'اللَّهُمَّ إِنِّي عَبْدُكَ، ابْنُ عَبْدِكَ، ابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ',meaning:'',source:'رواه أحمد'},
+    {title:'دعاء الكرب',arabic:'لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ',source:'متفق عليه'},
+    {title:'دعاء يونس',arabic:'لَا إِلَهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ',source:'القرآن الكريم'},
+    {title:'دعاء الهم',arabic:'اللَّهُمَّ إِنِّي عَبْدُكَ، ابْنُ عَبْدِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ',source:'رواه أحمد'},
   ]},
   healing:{title:'💊 دعاء الشفاء',items:[
-    {title:'رقية المريض',arabic:'اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَأْسَ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا',meaning:'',source:'متفق عليه'},
-    {title:'بسم الله أرقيك',arabic:'بِسْمِ اللَّهِ أَرْقِيكَ، مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ، مِنْ شَرِّ كُلِّ نَفْسٍ أَوْ عَيْنِ حَاسِدٍ، اللَّهُ يَشْفِيكَ',meaning:'',source:'رواه مسلم'},
+    {title:'رقية المريض',arabic:'اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَأْسَ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ',source:'متفق عليه'},
+    {title:'بسم الله أرقيك',arabic:'بِسْمِ اللَّهِ أَرْقِيكَ، مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ، اللَّهُ يَشْفِيكَ',source:'رواه مسلم'},
   ]},
   rizq:{title:'🌿 دعاء الرزق',items:[
-    {title:'دعاء توسعة الرزق',arabic:'اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ',meaning:'',source:'رواه الترمذي'},
-    {title:'دعاء البركة',arabic:'اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا، وَقِنَا عَذَابَ النَّارِ',meaning:'',source:''},
-    {title:'الاستغفار',arabic:'أَسْتَغْفِرُ اللَّهَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ',meaning:'',source:'رواه أبو داود'},
+    {title:'دعاء الرزق',arabic:'اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ',source:'رواه الترمذي'},
+    {title:'دعاء البركة',arabic:'اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا، وَقِنَا عَذَابَ النَّارِ',source:''},
   ]},
   marriage:{title:'💍 دعاء الزواج',items:[
-    {title:'دعاء موسى',arabic:'رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ',meaning:'',source:'القصص: ٢٤'},
-    {title:'دعاء الذرية',arabic:'رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ الدُّعَاءِ',meaning:'',source:'آل عمران: ٣٨'},
-    {title:'دعاء البركة في الزواج',arabic:'اللَّهُمَّ بَارِكْ لَنَا وَبَارِكْ عَلَيْنَا وَاجْمَعْ بَيْنَنَا فِي خَيْرٍ',meaning:'',source:''},
+    {title:'دعاء موسى',arabic:'رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ',source:'القصص: ٢٤'},
+    {title:'دعاء الذرية',arabic:'رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً',source:'آل عمران: ٣٨'},
   ]},
   parents:{title:'👨‍👩‍👧 دعاء الوالدين',items:[
-    {title:'دعاء للوالدين',arabic:'رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا',meaning:'',source:'الإسراء: ٢٤'},
-    {title:'دعاء المغفرة',arabic:'رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَن دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ',meaning:'',source:'نوح: ٢٨'},
+    {title:'دعاء للوالدين',arabic:'رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا',source:'الإسراء: ٢٤'},
+    {title:'دعاء المغفرة',arabic:'رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ',source:'نوح: ٢٨'},
   ]},
   travel:{title:'✈️ دعاء السفر',items:[
-    {title:'دعاء ركوب السيارة',arabic:'سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ',meaning:'',source:'الزخرف: ١٣-١٤'},
-    {title:'دعاء السفر',arabic:'اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى، وَمِنَ الْعَمَلِ مَا تَرْضَى',meaning:'',source:'رواه مسلم'},
+    {title:'دعاء الركوب',arabic:'سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ',source:'الزخرف: ١٣'},
+    {title:'دعاء السفر',arabic:'اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى',source:'رواه مسلم'},
   ]},
   exam:{title:'📚 دعاء الامتحان',items:[
-    {title:'دعاء زيادة العلم',arabic:'رَّبِّ زِدْنِي عِلْمًا',meaning:'',source:'طه: ١١٤'},
-    {title:'دعاء شرح الصدر',arabic:'رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي يَفْقَهُوا قَوْلِي',meaning:'',source:'طه: ٢٥-٢٨'},
-    {title:'دعاء الحفظ',arabic:'اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي، وَعَلِّمْنِي مَا يَنْفَعُنِي، وَزِدْنِي عِلْمًا',meaning:'',source:'رواه ابن ماجه'},
+    {title:'زيادة العلم',arabic:'رَّبِّ زِدْنِي عِلْمًا',source:'طه: ١١٤'},
+    {title:'شرح الصدر',arabic:'رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي',source:'طه: ٢٥-٢٦'},
+    {title:'دعاء الحفظ',arabic:'اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي وَزِدْنِي عِلْمًا',source:'رواه ابن ماجه'},
   ]},
   quranDua:{title:'📖 أدعية قرآنية',items:[
-    {title:'دعاء الثبات',arabic:'رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً',meaning:'',source:'آل عمران: ٨'},
-    {title:'دعاء خير الدنيا والآخرة',arabic:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',meaning:'',source:'البقرة: ٢٠١'},
-    {title:'دعاء التوكل',arabic:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',meaning:'',source:'آل عمران: ١٧٣'},
-    {title:'دعاء الصبر',arabic:'رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا وَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ',meaning:'',source:'البقرة: ٢٥٠'},
+    {title:'دعاء الثبات',arabic:'رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً',source:'آل عمران: ٨'},
+    {title:'خير الدنيا والآخرة',arabic:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',source:'البقرة: ٢٠١'},
+    {title:'دعاء التوكل',arabic:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',source:'آل عمران: ١٧٣'},
   ]}
 };
 
@@ -627,16 +556,33 @@ let khatma=JSON.parse(localStorage.getItem('khatma')||'{}');
 let tasbihSaved=JSON.parse(localStorage.getItem('tasbihSaved')||'{}');
 let isLight=localStorage.getItem('theme')==='light';
 let audio=null,isPlaying=false,audioInterval=null;
+const surahCache={};
 if(isLight)document.body.classList.add('light');
 
 const tod=ayahOfDay[new Date().getDay()%ayahOfDay.length];
 document.getElementById('ayahDay').innerHTML=`<div class="ayah-day-label">✨ آية اليوم</div><div class="ayah-day-text">${tod.text}</div><div class="ayah-day-ref">${tod.ref}</div>`;
 
-setTimeout(()=>{
-  document.getElementById('splash').classList.add('hide');
-  document.getElementById('homePage').style.display='flex';
-  setTimeout(()=>document.getElementById('splash').remove(),700);
-},2000);
+function showPage(id){
+  if(audio&&isPlaying&&id==='homePage'){audio.pause();isPlaying=false;clearInterval(audioInterval);}
+  document.querySelectorAll('.home-page,.page').forEach(p=>{
+    p.classList.remove('active');
+    if(p.classList.contains('home-page'))p.style.display='none';
+  });
+  if(id==='homePage'){
+    document.getElementById('homePage').style.display='flex';
+  }else{
+    document.getElementById(id).classList.add('active');
+    if(id==='namesPage')renderNames();
+    if(id==='storiesPage')renderStories();
+  }
+  window.scrollTo(0,0);
+}
+
+function toggleTheme(){
+  isLight=!isLight;
+  document.body.classList.toggle('light',isLight);
+  localStorage.setItem('theme',isLight?'light':'dark');
+}
 
 function renderNames(q=''){
   const list=q?allNames.filter(n=>n.ar.includes(q)||n.meaning.includes(q)):allNames;
@@ -673,17 +619,15 @@ function showDuas(cat){
     <div class="dua-card">
       <div class="dua-title">${z.title}</div>
       <div class="dua-arabic">${z.arabic}</div>
-      ${z.meaning?`<div class="dua-meaning">${z.meaning}</div>`:''}
       ${z.source?`<div class="dua-source">${z.source}</div>`:''}
     </div>`).join('');
   showPage('duasDetailPage');
 }
 
-// AUDIO - محلول مشكلة التحميل
 const audioSources=[
-  num=>`https://download.quranicaudio.com/quran/yasser_ad-dussary/${String(num).padStart(3,'0')}.mp3`,
-  num=>`https://server8.mp3quran.net/aldosri/${String(num).padStart(3,'0')}.mp3`,
-  num=>`https://cdn.islamic.network/quran/audio-surah/128/ar.yasserdossari/${num}.mp3`,
+  n=>`https://download.quranicaudio.com/quran/yasser_ad-dussary/${String(n).padStart(3,'0')}.mp3`,
+  n=>`https://server8.mp3quran.net/aldosri/${String(n).padStart(3,'0')}.mp3`,
+  n=>`https://cdn.islamic.network/quran/audio-surah/128/ar.yasserdossari/${n}.mp3`,
 ];
 let audioSourceIndex=0;
 
@@ -692,11 +636,9 @@ function tryNextSource(){
   if(audioSourceIndex>=audioSources.length){
     document.getElementById('audioInfo').textContent='تعذر تحميل الصوت';
     document.getElementById('playBtn').textContent='▶';
-    isPlaying=false;
-    return;
+    isPlaying=false;return;
   }
-  const url=audioSources[audioSourceIndex](currentSurahNum);
-  audio.src=url;
+  audio.src=audioSources[audioSourceIndex](currentSurahNum);
   audio.play().catch(()=>tryNextSource());
 }
 
@@ -709,9 +651,8 @@ function toggleAudio(){
     clearInterval(audioInterval);
   }else{
     audioSourceIndex=0;
-    const url=audioSources[0](currentSurahNum);
-    if(!audio){audio=new Audio();}
-    audio.src=url;
+    if(!audio)audio=new Audio();
+    audio.src=audioSources[0](currentSurahNum);
     audio.onended=()=>{isPlaying=false;document.getElementById('playBtn').textContent='▶';document.getElementById('audioInfo').textContent='انتهت السورة';clearInterval(audioInterval);};
     audio.onerror=()=>tryNextSource();
     document.getElementById('audioInfo').textContent='جاري التحميل...';
@@ -736,26 +677,6 @@ function seekAudio(e){
   audio.currentTime=(e.clientX-rect.left)/rect.width*audio.duration;
 }
 
-function showPage(id){
-  if(audio&&isPlaying&&id==='homePage'){audio.pause();isPlaying=false;clearInterval(audioInterval);}
-  document.querySelectorAll('.home-page,.page').forEach(p=>{p.classList.remove('active');if(p.classList.contains('home-page'))p.style.display='none';});
-  if(id==='homePage'){document.getElementById('homePage').style.display='flex';}
-  else{
-    document.getElementById(id).classList.add('active');
-    if(id==='namesPage')renderNames();
-    if(id==='storiesPage')renderStories();
-  }
-  window.scrollTo(0,0);
-}
-
-function toggleTheme(){
-  isLight=!isLight;
-  document.body.classList.toggle('light',isLight);
-  localStorage.setItem('theme',isLight?'light':'dark');
-}
-
-// تحميل سريع - cache السور
-const surahCache={};
 async function loadSurahs(){
   if(allSurahs.length){renderSurahs();return;}
   try{
@@ -792,12 +713,7 @@ async function loadSurah(num){
   if(audio){audio.pause();isPlaying=false;clearInterval(audioInterval);audio=null;document.getElementById('playBtn').textContent='▶';document.getElementById('audioInfo').textContent='اضغط للاستماع';document.getElementById('audioBar').style.width='0%';}
   showPage('surahPage');
   updateBookmarkBtn();
-
-  // تحقق من الكاش أولاً — أسرع تحميل
-  if(surahCache[num]){
-    renderSurah(surahCache[num]);return;
-  }
-
+  if(surahCache[num]){renderSurah(surahCache[num]);return;}
   document.getElementById('surahContent').innerHTML='<div class="loading"><div class="spinner"></div>جاري التحميل...</div>';
   try{
     const r=await fetch(`https://api.alquran.cloud/v1/surah/${num}`);
@@ -817,16 +733,11 @@ function renderSurah(s){
       ${s.number!==9?'<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>':''}
     </div>
     <div class="mushaf-container">
-      <div class="mushaf-text" id="mushafText" style="font-size:${​​​​​​​​​​​​​​​​
-fontSize}rem">${txt}</div>
+      <div class="mushaf-text" id="mushafText" style="font-size:${fontSize}rem">${txt}</div>
     </div>`;
 }
 
-function changeFontSize(d){
-  fontSize=Math.min(Math.max(fontSize+d,1),2.5);
-  const el=document.getElementById('mushafText');
-  if(el)el.style.fontSize=fontSize+'rem';
-}
+function changeFontSize(d){fontSize=Math.min(Math.max(fontSize+d,1),2.5);const el=document.getElementById('mushafText');if(el)el.style.fontSize=fontSize+'rem';}
 
 function toggleBookmark(){
   if(bookmarks.includes(currentSurahNum))bookmarks=bookmarks.filter(b=>b!==currentSurahNum);
@@ -880,9 +791,7 @@ function countTasbih(){
   if(tasbihCount===tasbihTarget)setTimeout(()=>alert('🎉 ما شاء الله! أتممت العدد'),100);
 }
 
-function updateTasbihBar(){
-  document.getElementById('tasbihFill').style.width=Math.min(tasbihCount/tasbihTarget*100,100)+'%';
-}
+function updateTasbihBar(){document.getElementById('tasbihFill').style.width=Math.min(tasbihCount/tasbihTarget*100,100)+'%';}
 
 function resetTasbih(){
   tasbihCount=0;tasbihSaved[tasbihKey]=0;
@@ -918,9 +827,7 @@ function updateKhatmaStats(){
   document.getElementById('khatmaBar').style.width=pct+'%';
 }
 
-function resetKhatma(){
-  if(confirm('إعادة ضبط الختمة؟')){khatma={};localStorage.setItem('khatma','{}');loadKhatma();}
-}
+function resetKhatma(){if(confirm('إعادة ضبط الختمة؟')){khatma={};localStorage.setItem('khatma','{}');loadKhatma();}}
 
 function showAzkar(cat){
   const d=azkarData[cat];
