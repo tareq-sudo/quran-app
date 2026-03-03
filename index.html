@@ -636,7 +636,7 @@ setTimeout(()=>{
   document.getElementById('splash').classList.add('hide');
   document.getElementById('homePage').style.display='flex';
   setTimeout(()=>document.getElementById('splash').remove(),700);
-},1500);
+},500);
 
 function renderNames(q=''){
   const list=q?allNames.filter(n=>n.ar.includes(q)||n.meaning.includes(q)):allNames;
