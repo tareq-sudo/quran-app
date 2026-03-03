@@ -739,7 +739,7 @@ function seekAudio(e){
 function showPage(id){
   if(audio&&isPlaying&&id==='homePage'){audio.pause();isPlaying=false;clearInterval(audioInterval);}
   document.querySelectorAll('.home-page,.page').forEach(p=>{p.classList.remove('active');if(p.classList.contains('home-page'))p.style.display='none';});
-  if(id==='homePage'){document.getElementById('homePage').style.display='flex';}
+  if(id==='homePage'){document.getElementById('homePage').style.cssText='display:flex!important';}
   else{
     document.getElementById(id).classList.add('active');
     if(id==='namesPage')renderNames();
